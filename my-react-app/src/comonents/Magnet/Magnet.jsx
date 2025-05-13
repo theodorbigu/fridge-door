@@ -6,15 +6,19 @@ import './Magnet.css';
 import magnet1 from '../../assets/magnets/magnet-1.png';
 import magnet2 from '../../assets/magnets/magnet-2.png';
 import magnet3 from '../../assets/magnets/magnet-3.png';
+import magnet4 from '../../assets/magnets/magnet-4.png';
 
 const magnetImages = {
   1: magnet1,
   2: magnet2,
-  3: magnet3
+  3: magnet3,
+  4: magnet4
 };
 
 const Magnet = ({ id, position, onDragStop }) => {
   const nodeRef = useRef(null);
+
+  console.log(id);
 
   // Calculate the scale based on size prop (0-100)
 

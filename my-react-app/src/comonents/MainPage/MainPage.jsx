@@ -15,7 +15,12 @@ import './MainPage.css';
 
 const MainPage = () => {
   const [postits, setPostits] = useState([]);
-  const [magnets, setMagnets] = useState([]);
+  const [magnets, setMagnets] = useState([
+    // { id: 1, position: { x: 52, y: 52 } },
+    // { id: 2, position: { x: 50, y: 50 } },
+    // { id: 3, position: { x: 50, y: 50 } },
+    // { id: 4, position: { x: 50, y: 50 } }
+  ]);
 
   // Load initial data
   useEffect(() => {
