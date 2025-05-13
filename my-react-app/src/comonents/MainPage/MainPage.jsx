@@ -35,7 +35,7 @@ const MainPage = () => {
           className="add-button" 
           onClick={addPostit}
         >
-          +
+          Add Postit
         </button>
       </div>
       {postits.map(postit => (
