@@ -1,0 +1,35 @@
+.postit {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: #fff475;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  flex-direction: column;
+  cursor: move;
+  transition: opacity 0.2s;
+}
+
+.postit-dragging {
+  opacity: 0.5;
+}
+
+.postit-close {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0,0,0,0.1);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+}
