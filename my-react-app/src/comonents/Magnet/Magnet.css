@@ -1,0 +1,26 @@
+.magnet {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  z-index: 2;
+  width: 205px;
+  height: 307px;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  transition: filter 0.2s ease;
+}
+
+.magnet:hover {
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.magnet:active {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.magnet img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: block;
+  object-fit: contain;
+}

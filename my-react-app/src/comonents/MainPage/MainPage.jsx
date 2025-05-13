@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import Postit from '../Postit/Postit';
+import Magnet from '../Magnet/Magnet';
 import './MainPage.css';
 
 const MainPage = () => {
   const [postits, setPostits] = useState([]);
   const [nextId, setNextId] = useState(1);
+
+  // Initial positions and sizes for the three magnets
+  const magnets = [
+    { id: 1, position: { x: 50, y: 50 } },
+    { id: 2, position: { x: window.innerWidth - 150, y: 50 } },
+    { id: 3, position: { x: window.innerWidth / 2 - 50, y: window.innerHeight - 150 } }
+  ];
 
   const addPostit = () => {
     // Add new postit at a slightly offset position from center
@@ -38,6 +46,15 @@ const MainPage = () => {
           Add Postit
         </button>
       </div>
+      {/* Render magnets */}
+      {magnets.map(magnet => (
+        <Magnet
+          key={magnet.id}
+          id={magnet.id}
+          position={magnet.position}
+        />
+      ))}
+      {/* Render postits */}
       {postits.map(postit => (
         <Postit 
           key={postit.id} 
