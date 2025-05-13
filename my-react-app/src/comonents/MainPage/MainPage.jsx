@@ -28,12 +28,16 @@ const MainPage = () => {
 
   return (
     <div className="main-container">
-      <button 
-        className="add-button" 
-        onClick={addPostit}
-      >
-        +
-      </button>
+      <div className="header-content">
+        <h1 className="main-title">Fridge Door</h1>
+        <p className="subtitle">Leave a message for me when you are bored</p>
+        <button 
+          className="add-button" 
+          onClick={addPostit}
+        >
+          +
+        </button>
+      </div>
       {postits.map(postit => (
         <Postit 
           key={postit.id} 
