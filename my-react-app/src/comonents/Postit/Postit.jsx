@@ -1,30 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Postit.css';
-import { useDrag } from 'react-dnd';
+import Draggable from 'react-draggable';
 
-const Postit = ({ id, onClose }) => {
-  const [{ isDragging }, drag] = useDrag({
-    type: 'POSTIT',
-    item: { id },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  });
+const Postit = ({ id, position, onClose }) => {
+  const nodeRef = useRef(null);
 
   return (
-    <div
-      className={`postit${isDragging ? ' postit-dragging' : ''}`}
-      ref={drag}
+    <Draggable
+      nodeRef={nodeRef}
+      defaultPosition={position}
+      bounds="parent"
+      handle=".postit"
     >
-      <button
-        className="postit-close"
-        onClick={onClose}
-        aria-label="Close postit"
-      >
-        ×
-      </button>
-      {id}
-    </div>
+      <div ref={nodeRef} className="postit">
+        <button
+          className="postit-close"
+          onClick={onClose}
+          aria-label="Close postit"
+        >
+          ×
+        </button>
+        {id}
+      </div>
+    </Draggable>
   );
 };
 
