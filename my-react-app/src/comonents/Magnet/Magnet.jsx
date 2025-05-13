@@ -13,7 +13,7 @@ const magnetImages = {
   3: magnet3
 };
 
-const Magnet = ({ id, position }) => {
+const Magnet = ({ id, position, onDragStop }) => {
   const nodeRef = useRef(null);
 
   // Calculate the scale based on size prop (0-100)
@@ -23,11 +23,11 @@ const Magnet = ({ id, position }) => {
       nodeRef={nodeRef}
       defaultPosition={position}
       bounds="parent"
+      onStop={onDragStop}
     >
       <div 
         ref={nodeRef} 
         className="magnet"
-        
       >
         <img 
           src={magnetImages[id]} 

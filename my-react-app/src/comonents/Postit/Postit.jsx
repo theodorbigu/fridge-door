@@ -1,13 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import './Postit.css';
 import Draggable from 'react-draggable';
 
-const Postit = ({ id, position, onClose }) => {
+const Postit = ({ id, position, content, onClose, onDragStop, onContentChange }) => {
   const nodeRef = useRef(null);
-  const [content, setContent] = useState(`Note ${id}`);
 
   const handleContentChange = (e) => {
-    setContent(e.target.value);
+    onContentChange(e.target.value);
   };
 
   return (
@@ -16,6 +15,7 @@ const Postit = ({ id, position, onClose }) => {
       defaultPosition={position}
       bounds="parent"
       handle=".postit-header"
+      onStop={onDragStop}
     >
       <div ref={nodeRef} className="postit">
         <div className="postit-header">
