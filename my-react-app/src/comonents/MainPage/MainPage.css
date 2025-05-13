@@ -3,7 +3,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-image: url('../../assets/bg.png');
+  background-image: url('../../assets/bg1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.4); /* 40% white overlay */
+  /* background-color: rgba(255, 255, 255, 0.2);  */
   pointer-events: none; /* allows clicking through to the container */
 }
 
